@@ -1,10 +1,12 @@
 # Шаблон selenide проекта
 
--maven
--testng
--allure
+maven, testng, allure
 
-1.Запуск тестов:
+1.Локальный запуск тестов:
 ```
-mvn -P firefox,testhost,nogrid clean test
+mvn -P firefox,testhost,noselenoid clean test
+```
+2.Запуск тестов в selenoid:
+```
+mvn -P firefox,testhost,selenoid clean test
 ```
