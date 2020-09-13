@@ -135,8 +135,8 @@
     <profile>
         <id>chrome</id>
         <properties>
-            <capabilities>/chrome.capabilities</capabilities>
-            <browser>chrome</browser>
+            <browser.name>chrome</browser.name>
+            <browser.version>85.0</browser.version>
         </properties>
         <activation>
             <activeByDefault>true</activeByDefault>
@@ -145,7 +145,15 @@
     <profile>
         <id>firefox</id>
         <properties>
-            <browser>firefox</browser>
+            <browser.name>firefox</browser.name>
+            <browser.version>79.0</browser.version>
+        </properties>
+    </profile>
+    <profile>
+        <id>opera</id>
+        <properties>
+            <browser.name>opera</browser.name>
+            <browser.version>70.0</browser.version>
         </properties>
     </profile>
     <!-- environments -->
@@ -164,20 +172,20 @@
             <site.url>https://ag.mos.ru/home</site.url>
         </properties>
     </profile>
-    <!-- grid -->
+    <!-- selenoid -->
     <profile>
-        <id>nogrid</id>
+        <id>noselenoid</id>
         <properties>
-            <grid.url></grid.url>
+            <selenoid.url></selenoid.url>
         </properties>
         <activation>
             <activeByDefault>true</activeByDefault>
         </activation>
     </profile>
     <profile>
-        <id>grid</id>
+        <id>selenoid</id>
         <properties>
-            <grid.url>http://localhost:4444/wd/hub/</grid.url>
+            <selenoid.url>http://localhost:4444/wd/hub/</selenoid.url>
         </properties>
     </profile>
     </profiles>
