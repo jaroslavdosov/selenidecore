@@ -46,7 +46,6 @@ public class TestBase {
         }
         Configuration.browser = browser;
         Configuration.browserSize = "1920x1080";
-        Configuration.browserVersion = PropertyLoader.loadProperty("browser.version");
         Configuration.timeout = 10000;
 
         DesiredCapabilities capabilities = new DesiredCapabilities();

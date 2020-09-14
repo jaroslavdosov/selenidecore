@@ -30,7 +30,7 @@
         <dependency>
             <groupId>com.codeborne</groupId>
             <artifactId>selenide</artifactId>
-            <version>5.13.0</version>
+            <version>5.13.1</version>
         </dependency>
         <dependency>
             <groupId>io.qameta.allure</groupId>
@@ -136,7 +136,6 @@
         <id>chrome</id>
         <properties>
             <browser.name>chrome</browser.name>
-            <browser.version>85.0</browser.version>
         </properties>
         <activation>
             <activeByDefault>true</activeByDefault>
@@ -146,14 +145,12 @@
         <id>firefox</id>
         <properties>
             <browser.name>firefox</browser.name>
-            <browser.version>79.0</browser.version>
         </properties>
     </profile>
     <profile>
         <id>opera</id>
         <properties>
             <browser.name>opera</browser.name>
-            <browser.version>70.0</browser.version>
         </properties>
     </profile>
     <!-- environments -->
