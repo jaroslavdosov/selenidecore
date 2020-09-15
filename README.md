@@ -4,9 +4,9 @@ maven, testng, allure
 
 1.Локальный запуск тестов:
 ```
-mvn -P firefox,testhost,noselenoid clean test
+mvn -P firefox,testhost,noselenoid clean test site
 ```
 2.Запуск тестов в selenoid:
 ```
-mvn -P firefox,testhost,selenoid clean test
+mvn -P firefox,testhost,selenoid clean test site
 ```

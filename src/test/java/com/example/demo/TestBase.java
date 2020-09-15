@@ -6,14 +6,12 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
-import utils.PropertyLoader;
+import com.example.demo.utils.PropertyLoader;
 
 
 import java.io.IOException;
 
-import static com.codeborne.selenide.Selenide.*;
 
 public class TestBase {
 
@@ -53,11 +51,6 @@ public class TestBase {
         capabilities.setCapability( "enableVideo", true);
         Configuration.browserCapabilities = capabilities;
 
-    }
-
-    @BeforeMethod
-    public void initWebDriver() {
-        open(Configuration.baseUrl);
     }
 
     @AfterMethod(alwaysRun = true)

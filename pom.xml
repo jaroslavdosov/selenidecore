@@ -157,7 +157,7 @@
     <profile>
         <id>testhost</id>
         <properties>
-            <site.url>https://ag.mos.ru/home</site.url>
+            <site.url>http://www.protesting.ru/</site.url>
         </properties>
         <activation>
             <activeByDefault>true</activeByDefault>
@@ -166,7 +166,7 @@
     <profile>
         <id>prodhost</id>
         <properties>
-            <site.url>https://ag.mos.ru/home</site.url>
+            <site.url>http://www.protesting.ru/</site.url>
         </properties>
     </profile>
     <!-- selenoid -->
