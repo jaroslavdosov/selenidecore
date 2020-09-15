@@ -1,6 +1,7 @@
 package com.example.demo.listeners;
 
-import annotations.TestId;
+import com.example.demo.annotations.TestId;
+import com.example.demo.utils.AttachmentsUtils;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -15,30 +16,20 @@ public class ListenerTest implements ITestListener {
 
     @Override
     public void onTestSuccess(ITestResult iTestResult) {
-        System.out.println(iTestResult.getMethod());
-        System.out.println(iTestResult.getTestClass());
+        saveResult(iTestResult, "success");
 
-        for (Method testMethod : iTestResult.getTestClass().getRealClass().getMethods()) {
-            if (testMethod.getName().equals(iTestResult.getName()) && testMethod.isAnnotationPresent(TestId.class)) {
-
-                TestId useAsTestName = testMethod.getAnnotation(TestId.class);
-                System.out.println("Case ID---> " +  useAsTestName.id() + " Run ID--> ");
-                System.out.println("send44444444444444444444");
-                System.out.println(useAsTestName);
-            }
-        }
-
-        System.out.println("ti super!");
     }
 
     @Override
     public void onTestFailure(ITestResult iTestResult) {
-
+        saveResult(iTestResult, "failure");
+        AttachmentsUtils attach = new AttachmentsUtils();
+        attach.makeScreenShot();
     }
 
     @Override
     public void onTestSkipped(ITestResult iTestResult) {
-
+        saveResult(iTestResult, "skipped");
     }
 
     @Override
@@ -54,5 +45,21 @@ public class ListenerTest implements ITestListener {
     @Override
     public void onFinish(ITestContext iTestContext) {
 
+    }
+
+    // сохраненение результата в тест рейл или куда-нибудь ещё
+    //  to do - пенести в отдельный класс
+    public void saveResult(ITestResult iTestResult, String result) {
+        System.out.println(iTestResult.getMethod());
+        System.out.println(iTestResult.getTestClass());
+
+        for (Method testMethod : iTestResult.getTestClass().getRealClass().getMethods()) {
+            if (testMethod.getName().equals(iTestResult.getName()) && testMethod.isAnnotationPresent(TestId.class)) {
+
+                TestId useAsTestName = testMethod.getAnnotation(TestId.class);
+                System.out.println("Case ID---> " +  useAsTestName.id() + "is " + result);
+            }
+        }
+        System.out.println("ti super! test ");
     }
 }
